@@ -35,3 +35,24 @@ Generate Bitcoin addresses that start with your custom prefix (e.g. `1Veronica` 
 git clone https://github.com/yourusername/pybitcoinvanity.git
 cd pybitcoinvanity
 pip install -r requirements.txt
+
+📖 Usage Examples
+Legacy address starting with 1Veronica:
+Bashpython vanity_generator.py --prefix "1Veronica" --type legacy --threads 12
+Bech32 address starting with bc1qveronice:
+Bashpython vanity_generator.py --prefix "bc1qveronice" --type bech32 --threads 8 --output vanity_results.json
+Find 3 different addresses:
+Bashpython vanity_generator.py --prefix "1Vero" --type legacy --count 3
+⚙️ Arguments
+
+--prefix       : Desired prefix (required)
+--type         : legacy or bech32 (default: legacy)
+--threads      : Number of CPU threads (default: all cores)
+--count        : Number of vanity addresses to generate (default: 1)
+--output       : Output file path (default: vanity_results.json)
+--max-attempts : Maximum attempts before stopping
+
+📊 Performance
+On a 12-core CPU you can expect ~500.000 - 1.000.000 keys/second depending on prefix length.
+🔒 Security
+Private keys are generated with os.urandom + ecdsa library. Never share your private keys!
