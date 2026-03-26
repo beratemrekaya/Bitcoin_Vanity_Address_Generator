@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -52,6 +53,11 @@ Bashpython vanity_generator.py --prefix "1Vero" --type legacy --count 3
 --output       : Output file path (default: vanity_results.json)
 --max-attempts : Maximum attempts before stopping
 
+How are you going to start it?
+Bashpip install -r requirements.txt
+python vanity_generator.py --prefix "1Veronica" --type legacy --threads 16
+Or Bech32:
+Bashpython vanity_generator.py --prefix "bc1qveronice" --type bech32 --threads 12
 📊 Performance
 On a 12-core CPU you can expect ~500.000 - 1.000.000 keys/second depending on prefix length.
 🔒 Security
